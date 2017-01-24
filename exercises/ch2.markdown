@@ -118,3 +118,29 @@ Dual to above.
 `f` being a split mono and a split epi means it has both left and right inverses
 equal to `1_A` and `1_B` respectively. But these are both just `g`.
 
+
+### 2.8.6
+
+> Show that a homomorphism `h : G -> H` of graphs is monic just if it is
+> injective on both edges and vertices.
+
+Because a graph `G = (V, E)`, for sets `V : Set`, `E : VxV`, it can be modeled
+as a product of the form `(V, VxV) : Set`. A graph homomorphism is thus some `f
+: (V, VxV) -> (V', V'xV')` in Set.
+
+Graphs are products in the category `Set`, so we can construct a pointwise
+product diagram over them:
+
+<pre>
+       (V ,  VxV)
+   f /    | <f,g> \ g
+   .      v        .
+V' <- (V' ,  V'xV') -> V'xV'
+</pre>
+
+By 2.8.4, we know that if `f` is monic, the first half of the pointwise `h =
+<f,g>` is monic. Likewise for `g`. Therefore `h` is monic only if `f` and `g`
+are monic.
+
+TODO: How do we go the other way?
+
