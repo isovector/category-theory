@@ -133,7 +133,7 @@ product diagram over them:
 
 <pre>
        (V ,  VxV)
-   f /    | <f,g> \ g
+   f /    | &lt;f,g&gt; \ g
    .      v        .
 V' <- (V' ,  V'xV') -> V'xV'
 </pre>
