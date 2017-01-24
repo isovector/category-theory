@@ -92,11 +92,11 @@ The split epicness of `f` means we have some `g : B -> a` such that `fg = 1_B`.
 
 This is the first half of the isomorphism. Need to show `gf = 1_A`:
 
-`fg = 1_B` (definition of split epi)
-`fgf = 1_B f` (right compose with `f`)
-`fgf = 1_B f 1_A` (make identity explicit)
-`fgf = f 1_A` (hide explicit identity)
-`gf = 1_A` (`f` is monic)
+1) `fg = 1_B` (definition of split epi)
+2) `fgf = 1_B f` (right compose with `f`)
+3) `fgf = 1_B f 1_A` (make identity explicit)
+4) `fgf = f 1_A` (hide explicit identity)
+5) `gf = 1_A` (`f` is monic)
 
 Therefore `f` being a mono and split epi implies `f` is an iso.
 
