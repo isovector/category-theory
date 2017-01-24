@@ -78,11 +78,43 @@ is not injective).
 
 > Show that the following are equivalent for an arrow `f : A -> B` in any
 > category:
->
-> * `f` is an iso
-> * `f` is both a mono and a split epi
-> * `f` is both a split mono and an epi
-> * `f` is both a split mono and a split epi
 
-TODO
+By reduction to an isomorphism with `g` as the inverse to `f`:
+
+#### `f` is an iso
+
+`f` is an iso. Duh.
+
+
+#### `f` is both a mono and a split epi
+
+The split epicness of `f` means we have some `g : B -> a` such that `fg = 1_B`.
+
+This is the first half of the isomorphism. Need to show `gf = 1_A`:
+
+`fg = 1_B` (definition of split epi)
+`fgf = 1_B f` (right compose with `f`)
+`fgf = 1_B f 1_A` (make identity explicit)
+`fgf = f 1_A` (hide explicit identity)
+`gf = 1_A` (`f` is monic)
+
+Therefore `f` being a mono and split epi implies `f` is an iso.
+
+**Other direction:**
+
+`f` is an iso. All isos are mono and epi, so `f` is a mono.
+
+To be a split epi, `f` must have a right inverse such that `fg = 1_B`, but this
+is just `g`.
+
+
+#### `f` is both a split mono and an epi
+
+Dual to above.
+
+
+#### `f` is both a split mono and a split epi
+
+`f` being a split mono and a split epi means it has both left and right inverses
+equal to `1_A` and `1_B` respectively. But these are both just `g`.
 
