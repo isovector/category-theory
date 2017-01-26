@@ -268,24 +268,40 @@ From wikipedia:
 > A functor `F : C -> Set` is said to be representable if it is naturally
 > isomorphic to Hom(A,–) for some object A of C.
 
-A forgetful functor is represented by (A, u) whenever A is a free object over a
-singleton set with generator u.
-
-TODO actually figure this out
+With this in mind, we can set up the `Representable` machinery:
 
 ```haskell
 class Representable f where
   type Repr f :: *
-  fromFunctor :: forall x. f x -> (Repr f -> x)
+  fromFunctor :: forall x. f x -> Repr f -> x
   toFunctor   :: forall x. (Repr f -> x) -> f x
+```
 
+and a `Forgetful` functor over monoids:
+
+```haskell
 data Forgetful a where
   Forget :: Monoid m => m -> Forgetful m
 
 -- notice there is no 'Monoid' instance for 'Forgetful' :)
-
-instance Representable Forgetful where
-  -- I DONT UNDERSTAND ANYTHING
 ```
 
+The only distinguished monoid I can think of is the free monoid `[a]`. But over
+what generator `a`?
+
+`a` is some set. So what distinguished sets do we have? We have an initial
+object `{}` (the empty set). But there is no non-trivial monoid over this.
+
+We also have the terminal object in the category of sets, which is any singleton
+set. Let's try that.
+
+Notice that `[()] ~ Nat`, so let's use `Nat` instead,
+
+```haskell
+instance Representable Forgetful where
+  type Repr Forgetful = Nat
+  fromFunctor (Forget _) 0 = mempty
+  fromFunctor (Forget m) n = mconcat $ replicate n m
+  toFunctor f = f 1
+```
 
