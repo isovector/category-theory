@@ -145,7 +145,7 @@ TODO: Other direction.
 By diagram chasing:
 
 <pre>
-         Ax(BxC)
+      Ax(BxC)
 </pre>
 
 <pre>
