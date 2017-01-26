@@ -1,13 +1,5 @@
 ## Chapter 2 Excercises
 
-### 2.8.1
-
-> Show that a function between sets is an epimorphism if and only if it is
-> surjective.
-
-TODO
-
-
 ### 2.8.2
 
 > Show that in a poset category, all arrows are both monic and epic.
@@ -146,21 +138,6 @@ TODO: Other direction.
 
 
 
-### 2.8.11
-
-> Let `A` be a set. Define an *A-monoid* to be a monoid `M` equipped with a
-> function `m : A -> U(M)` (to the underlying set of `M`). A morphism `h :
-> (M,m) -> (N, n)` of *A-monoids* is to be a monoid homomorphism `h : M -> N`
-> such that `U(h)m = n` (a commutative triangle). Together with the event
-> identities and composites, this defines a category **A-Mon** of *A-monoids*.
->
-> Show that an initial object in **A-Mon** is the same thing as a free monoid on
-> `A`.
-
-
-TODO
-
-
 ### 2.8.13
 
 > Any any category with binary products, show directly that `Ax(BxC) ~ (AxB)xC`.
@@ -203,14 +180,14 @@ We can draw the image of `f : C_{A,B}` in `C`:
     /  |  \
   x1   f   x2
  .     v     .
-A <y1- Y -y2> B
+A &lt;y1- Y -y2&gt; B
 </pre>
 
 This looks suspiciously like a product diagram. Assume there exists a terminal
 object `(Z, z1, z2)` in `C_{A,B}`. In `C`, it looks like this:
 
 <pre>
-A <z1- Z -z2> B
+A &lt;z1- Z -z2&gt; B
 </pre>
 
 Additionally, if `Z` is terminal in `C_{A,B}`, there must be a unique arrow
@@ -221,7 +198,7 @@ is exactly equivalent to the product diagram:
      X
   /  :  \
  .   v   .
-A <- Z -> B
+A &lt;- Z -&gt; B
 </pre>
 
 which is the definition of the product `AxB`.
@@ -253,9 +230,6 @@ instance Functor ((->) a) where
   fmap :: (x -> y) -> (->) a x -> (->) a y
   fmap xy ax = \a -> xy (ax a)
 ```
-
-
-### 2.8.17
 
 
 ### 2.8.18
