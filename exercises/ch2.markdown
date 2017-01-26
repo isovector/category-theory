@@ -145,13 +145,44 @@ TODO: Other direction.
 By diagram chasing:
 
 <pre>
+         Ax(BxC)
+</pre>
+
+<pre>
+ A &lt;- Ax(BxC) -&gt; BxC
+</pre>
+
+<pre>
+ A &lt;- Ax(BxC) -&gt; BxC -&gt; C
+                  |
+                  v
+                  B
+</pre>
+
+<pre>
+ A &lt;- Ax(BxC) -&gt; BxC -&gt; C
+   .              |
+     \            v
+        AxB  -&gt;   B
+</pre>
+
+<pre>
  A &lt;- Ax(BxC) -&gt; BxC -&gt; C
    .     :        |
      \   v        v
         AxB  -&gt;   B
 </pre>
 
-Therefore, we have the following diagram:
+Eliding intermediate parts of the diagram, we now have:
+
+<pre>
+         Ax(BxC) -&gt; C
+         |
+         v
+        AxB
+</pre>
+
+And therefore because we have binary products, we get the product diagram:
 
 <pre>
        Ax(BxC)
